@@ -8,6 +8,8 @@ ula_74181 uut (.a(a), .b(b), .s(s), .m(m), .c_in(c_in), .f(f), .c_out(c_out), .a
 
 initial
 begin
+    $dumpfile("onda.vcd");
+    $dumpvars(0, tb_ula_74181);
     a = 4'b0000;
     b = 4'b0000;
     m = 1'b0;
