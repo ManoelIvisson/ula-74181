@@ -18,10 +18,26 @@ begin
     s = 4'b0000; 
     # 10;
     $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
+
+    a = 4'b0001; 
+    b = 4'b0011; 
+    m = 1'b0;    
+    c_in = 1'b0; 
+    s = 4'b0000; 
+    # 10;
+    $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
     
     // Operação Aritimetica - a | b
     a = 4'b0001; 
     b = 4'b0010; 
+    m = 1'b0;    
+    c_in = 1'b1; 
+    s = 4'b0001; 
+    # 10;
+    $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
+
+    a = 4'b0011; 
+    b = 4'b1010; 
     m = 1'b0;    
     c_in = 1'b1; 
     s = 4'b0001; 
@@ -37,9 +53,25 @@ begin
     # 10;
     $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
 
+    a = 4'b0101;
+    b = 4'b0101;
+    m = 1'b0;
+    c_in = 1'b0;
+    s = 4'b0010;
+    # 10;
+    $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
+
     // Operação Aritimetica - -1
     a = 4'b0011;
     b = 4'b0011;
+    m = 1'b0;
+    c_in = 1'b1;
+    s = 4'b0011;
+    # 10;
+    $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
+
+    a = 4'b1011;
+    b = 4'b1001;
     m = 1'b0;
     c_in = 1'b1;
     s = 4'b0011;
