@@ -9,8 +9,8 @@ always_comb begin : operacoes
         1'b0: case (c_in)
             1'b0: case (s)
                 4'b0000: {c_out, f} = a + 1;
-                4'b0001: {c_out, f} = a | b + 1;
-                4'b0010: {c_out, f} = a | ~b + 1;
+                4'b0001: {c_out, f} = (a | b) + 1;
+                4'b0010: {c_out, f} = (a | ~b) + 1;
                 4'b0011: begin
                     f = 0; 
                     c_out = 0;
@@ -74,8 +74,11 @@ always_comb begin : operacoes
                     f = 4'b0000; 
                     c_out = 0;
                 end
+            default: begin 
+                f = 4'b0000; 
+                c_out = 0;
+            end
             endcase
-            default: f = 4'b0000;
         endcase 
         1'b1: case (s)
             4'b0000: begin 
@@ -147,6 +150,10 @@ always_comb begin : operacoes
                 c_out = 0;
             end
         endcase
+        default: begin 
+            f = 4'b0000; 
+            c_out = 0;
+        end
     endcase
 
 
