@@ -1,7 +1,7 @@
 module tb_ula_74181;
 
-logic[3:0] a, b, s, f, c_out;
-logic m, c_in, a_eq_b;
+logic[3:0] a, b, s, f;
+logic m, c_in, a_eq_b, c_out;
 
 ula_74181 uut (.a(a), .b(b), .s(s), .m(m), .c_in(c_in), .f(f), .c_out(c_out), .a_eq_b(a_eq_b));
 
@@ -22,7 +22,7 @@ begin
     a = 4'b0001; 
     b = 4'b0011; 
     m = 1'b0;    
-    c_in = 1'b0; 
+    c_in = 1'b1;
     s = 4'b0000; 
     # 10;
     $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
@@ -44,9 +44,9 @@ begin
     # 10;
     $display("t=%0t: a=%b b=%b s=%b f=%b", $time, a, b, s, f);
 
-    // Operação Aritimetica - (a | ~b) + 1
-    a = 4'b0001;
-    b = 4'b0011;
+    // Operação Aritimetica - (a | ~b) + c_in
+    a = 4'b1000;
+    b = 4'b1000;
     m = 1'b0;
     c_in = 1'b0;
     s = 4'b0010;
