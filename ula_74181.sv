@@ -23,14 +23,14 @@ always_comb begin : operacoes
             end
             4'b1000: {c_out, f} = a + (a & b) + c_in;
             4'b1001: {c_out, f} = a + b + c_in;
-            4'b1010: {c_out, f} = (a | ~b) + (a & b) + c_in;
+            4'b1010: {c_out, f} = (a | (~b & 4'b1111)) + (a & b) + c_in;
             4'b1011: begin 
                 f = (a & b) - c_in; 
                 c_out = 0;
             end
             4'b1100: {c_out, f} = a + a + c_in;
             4'b1101: {c_out, f} = (a | b) + a + c_in;
-            4'b1110: {c_out, f} = (a | ~b) + a + c_in;
+            4'b1110: {c_out, f} = (a | (~b & 4'b1111)) + a + c_in;
             4'b1111: begin 
                 f = a - c_in; 
                 c_out = 0;
